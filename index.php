@@ -99,9 +99,10 @@ CSCI E-15: Dynamic Web Applications
                         <label for="include_number" class="col-xs-7 control-label">Add a number</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="include_number" value="yes" >
+                        </div>
+                        <div class="col-xs-3">
                             <span class="error"><?php echo $err_add_number;?></span>
                         </div>
-                        <div class="col-xs-3"></div>
                     </div>
 
                     <!-- Add a separator -->
@@ -109,9 +110,10 @@ CSCI E-15: Dynamic Web Applications
                         <label for="include_separator" class="col-xs-7 control-label">Add a separator</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="include_separator" value="yes" >
+                        </div>
+                        <div class="col-xs-3">
                             <span class="error"><?php echo $err_add_separator;?></span>
                         </div>
-                        <div class="col-xs-3"></div>
                     </div>
 
                     <!-- Set CamelCase -->
@@ -119,9 +121,10 @@ CSCI E-15: Dynamic Web Applications
                         <label for="set_camelcase" class="col-xs-7 control-label">Uppercase first letter</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="set_camelcase" value="yes" >
+                        </div>
+                        <div class="col-xs-3">
                             <span class="error"><?php echo $err_set_camelcase;?></span>
                         </div>
-                        <div class="col-xs-3"></div>
                     </div>
 
                     <div class="form-group text-center">
