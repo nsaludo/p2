@@ -8,7 +8,7 @@
 ----
 ## Description
 
-This is the second project for the Dynamic Web application class. A password generator that generates password based on common english words which is inspired by the comic strip in http://xkcd.xom/936.  The comic strip suggests that random common words are better passwords than uncommon words because they are easier to rememebr but still difficult for others to guess.  The project requires a server side code written in php that will validate parameters sent and successfully generate passwords and display errors if there are invalid parameters.
+This is the second project for the Dynamic Web application class. A password generator that generates password based on common english words which is inspired by the comic strip in http://xkcd.xom/936.  The comic strip suggests that random common words are better passwords than uncommon words because they are easier to remember but still difficult for others to guess.  The project requires a server side code written in php that will validate parameters sent and successfully generate passwords and display errors if there are invalid parameters.
 
 ----
 ## Demo
