@@ -1,0 +1,79 @@
+/* Make the xkcd comic strip as the background - permission to use image as background was sent to xkcd@xkcd.com */
+body {
+    background: #000000 url("http://imgs.xkcd.com/comics/password_strength.png");
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: solid;
+}
+
+header .container {
+    margin-top: 25px;
+    padding-top: 30px;;
+}
+
+/* Jumbotron to display the title, password and the description of the project */
+div .jumbotron {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+/* Used to display password */
+div .box_white {
+    border-radius: 25px;
+    background: white;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+p .description {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h3 .project_title {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+/* if password is longer than box_white display - wrap it */
+h4 {
+    word-wrap: break-word;
+}
+
+/* Used to display the box conatining options to generate password */
+#password_options {
+    padding-top: 10px;
+    background-color: white;
+    border: 1px solid;
+}
+
+/* display errors in red */
+.error {
+    color: #FF0000;
+}
+
+footer {
+    text-align: center;
+    background: black;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    bottom:0;
+}
+/* responsive design for header to not be covered by navbar when viewing on mobile */
+@media only screen and (max-width: 500px) {
+    header {
+        padding-top: 5px;
+        margin-top: 5px;
+    }
+}
