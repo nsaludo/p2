@@ -17,20 +17,23 @@
     $include_number = "no";
     $include_separator = "no";
     $set_camelcase = "no";
+    $err_parameters = false;
 
     /* function to validate GET fields */
     function f_check_isset($var_name,$data_type,$default_value,&$error_message) {
 
         if (isset($_GET[$var_name])) {
+            global $err_parameters;
             $var_value = $_GET[$var_name];
             /* Validate value according to data type */
             if ($data_type == "number" && !is_numeric($var_value) ) {
-                $error_message = "Number is required";
+                $error_message = "*Number is required";
             } elseif ($data_type == "checkbox" && $var_value != "yes" && $var_value != "no") {
-                $error_message = "Invalid selection";
+                $error_message = "*Invalid selection";
             } else {
                 return $var_value;
             }
+            $err_parameters = true;
         } else {
             return $default_value;
         }
@@ -52,30 +55,34 @@
     $include_separator = f_check_isset("include_separator","checkbox","no",$err_add_separator);
     $set_camelcase = f_check_isset("set_camelcase","checkbox","no",$err_set_camelcase);
 
-    /* Set the word separator */
-    if ($include_separator == "yes") {
-        $separator = $separator_array[rand(0,5)];
-    } else {
-        $separator = "";
-    }
-
-    /* Process _GET */
-
-    for ($i = 0; $i < $number_of_words; $i++) {
-
-        if ($i == 0) {
-            if ($number_of_words == 1) {
-                $password = f_set_camelcase($random_words[rand(0, $words_max)]) . $separator;
-            } else {
-                $password = f_set_camelcase($random_words[rand(0, $words_max)]);
-            }
+    if (!$err_parameters) {  /* If there are no errors - create password */
+        /* Set the word separator */
+        if ($include_separator == "yes") {
+            $separator = $separator_array[rand(0,5)];
         } else {
-            $password = $password . $separator.f_set_camelcase($random_words[rand(0, $words_max)]);
+            $separator = "";
         }
-    }
 
-    /* Add number at the end if needed */
-    if ($include_number == "yes") {
-        $password = $password.rand(0,9);
+        /* Process _GET */
+
+        for ($i = 0; $i < $number_of_words; $i++) {
+
+            if ($i == 0) {
+                if ($number_of_words == 1) {
+                    $password = f_set_camelcase($random_words[rand(0, $words_max)]) . $separator;
+                } else {
+                    $password = f_set_camelcase($random_words[rand(0, $words_max)]);
+                }
+            } else {
+                $password = $password . $separator.f_set_camelcase($random_words[rand(0, $words_max)]);
+            }
+        }
+
+        /* Add number at the end if needed */
+        if ($include_number == "yes") {
+            $password = $password.rand(0,9);
+        }
+    } else {
+        $password ="&nbsp";
     }
 ?>
