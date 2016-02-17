@@ -4,6 +4,11 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 ?>
 
 <!DOCTYPE html>
+<!--
+Nora Saludo
+Project #2
+CSCI E-15: Dynamic Web Applications
+-->
 <html>
 <head>
     <title>Nora Saludo P2 DWA xkcd password generator</title>
@@ -21,7 +26,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 
-    <!--Include php script to process _POST-->
+    <!--Include php script to process _GET-->
     <?php require "logic.php"; ?>
 
 </head>
@@ -69,11 +74,10 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
             <div class="col-sm-3">
             </div>
             <div class="col-sm-6" id="password_options">
-                <form class="form-horizontal" method="POST" action="index.php">
+                <form class="form-horizontal" method="GET" action="index.php">
                     <!-- Number of words -->
                     <div class="form-group row form-group-md">
-                        <div class="col-xs-1"></div>
-                        <label for="number_of_words" class="col-xs-5 control-label">Number of Words</label>
+                        <label for="number_of_words" class="col-xs-7 control-label">Number of Words</label>
                         <div class="col-xs-4">
                             <select class="form-control" name="number_of_words">
                                 <option value="1">1</option>
@@ -86,38 +90,38 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                             </select>
+                            <span class="error"><?php echo $err_number_selector;?></span>
                         </div>
-                        <div class="col-xs-2"></div>
                     </div>
 
                     <!-- Add a Number -->
                     <div class="form-group row form-group-md" >
-                        <div class="col-xs-1"></div>
-                        <label for="include_number" class="col-xs-6 control-label">Add a number</label>
+                        <label for="include_number" class="col-xs-7 control-label">Add a number</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="include_number" value="yes" >
+                            <span class="error"><?php echo $err_add_number;?></span>
                         </div>
-                        <div class="col-xs-1"></div>
+                        <div class="col-xs-3"></div>
                     </div>
 
                     <!-- Add a separator -->
                     <div class="form-group row form-group-md" >
-                        <div class="col-xs-1"></div>
-                        <label for="include_separator" class="col-xs-6 control-label">Add a separator</label>
+                        <label for="include_separator" class="col-xs-7 control-label">Add a separator</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="include_separator" value="yes" >
+                            <span class="error"><?php echo $err_add_separator;?></span>
                         </div>
-                        <div class="col-xs-1"></div>
+                        <div class="col-xs-3"></div>
                     </div>
 
                     <!-- Set CamelCase -->
                     <div class="form-group row form-group-md" >
-                        <div class="col-xs-1"></div>
-                        <label for="set_camelcase" class="col-xs-6 control-label">Uppercase first letter</label>
+                        <label for="set_camelcase" class="col-xs-7 control-label">Uppercase first letter</label>
                         <div class="col-xs-2">
                             <input type="checkbox" class="form-control" name="set_camelcase" value="yes" >
+                            <span class="error"><?php echo $err_set_camelcase;?></span>
                         </div>
-                        <div class="col-xs-1"></div>
+                        <div class="col-xs-3"></div>
                     </div>
 
                     <div class="form-group text-center">
@@ -131,8 +135,11 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
         <br>
     </div>
 
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
     <footer>Copyright &copy; 2016 Nora Saludo</footer>
 
 </body>
 </html>
-
