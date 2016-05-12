@@ -79,11 +79,11 @@ CSCI E-15: Dynamic Web Applications
                     <div class="form-group row form-group-md">
                         <label for="number_of_words" class="col-xs-7 control-label">Number of Words</label>
                         <div class="col-xs-4">
-                            <select class="form-control" name="number_of_words">
+                            <select class="form-control" name="number_of_words" value="<?php echo $_GET["number_of_words"];?>">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                                <option value="4" selected>4</option>
+                                <option value="4"></option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                                 <option value="7">7</option>

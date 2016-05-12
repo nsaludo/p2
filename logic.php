@@ -27,7 +27,7 @@
             $var_value = $_GET[$var_name];
             /* Validate value according to data type */
             if ($data_type == "number" && !is_numeric($var_value) ) {
-                $error_message = "*Number is required";
+                $error_message = "*Please select a number";
             } elseif ($data_type == "checkbox" && $var_value != "yes" && $var_value != "no") {
                 $error_message = "*Invalid selection";
             } else {
